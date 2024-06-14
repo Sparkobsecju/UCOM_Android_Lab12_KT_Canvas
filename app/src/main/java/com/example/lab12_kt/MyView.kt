@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 
@@ -15,7 +16,23 @@ class MyView(context: Context, attributeView: AttributeSet?, defaultStyle: Int) 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         paintBackground(canvas)
-        paintCircle(canvas)
+//        paintCircle(canvas)
+        paintOval(canvas)
+    }
+
+    private fun paintOval(canvas: Canvas) {
+        val paint = Paint()
+        paint.style = Paint.Style.FILL
+        paint.color = Color.GREEN
+        val rectF: RectF = RectF(50f, 50f, 1050f, 500f)
+        canvas.drawOval(rectF, paint)
+        paint.color = Color.BLUE
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = 10f
+        val rectF2: RectF = RectF(50f, 350f, 1050f, 800f)
+        canvas.drawArc(rectF2, 0f, 90f, true, paint)
+        val rectF3: RectF = RectF(50f, 550f, 1050f, 1000f)
+        canvas.drawArc(rectF3, 90f, 90f, false, paint)
     }
 
     private fun paintCircle(canvas: Canvas) {
