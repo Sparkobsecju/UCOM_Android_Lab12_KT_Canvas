@@ -6,9 +6,10 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 
-class MyView(context: MainActivity, attributeView: AttributeSet?) : View(context) {
+class MyView(context: MainActivity, attributeView: AttributeSet?, defaultStyle: Int) : View(context) {
 
     constructor(context: MainActivity) : this(context, null)
+    constructor(context: MainActivity, attributeView: AttributeSet?) : this(context, attributeView, 0)
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
