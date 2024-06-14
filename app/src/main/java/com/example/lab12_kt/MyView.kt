@@ -17,7 +17,24 @@ class MyView(context: Context, attributeView: AttributeSet?, defaultStyle: Int) 
         super.onDraw(canvas)
         paintBackground(canvas)
 //        paintCircle(canvas)
-        paintOval(canvas)
+//        paintOval(canvas)
+        paintLine(canvas)
+    }
+
+    private fun paintLine(canvas: Canvas) {
+        val paint = Paint()
+        paint.style = Paint.Style.FILL
+        paint.color = Color.BLACK
+        paint.strokeWidth = 30f
+        paint.strokeCap = Paint.Cap.BUTT
+        canvas.drawLine(100f, 100f, 100f, 500f, paint)
+        canvas.drawLine(100f, 100f, 500f, 100f, paint)
+        paint.strokeCap = Paint.Cap.SQUARE
+        canvas.drawLine(150f, 150f, 150f, 550f, paint)
+        canvas.drawLine(150f, 150f, 550f, 150f, paint)
+        paint.strokeCap = Paint.Cap.ROUND
+        canvas.drawLine(200f, 200f, 200f, 600f, paint)
+        canvas.drawLine(200f, 200f, 600f, 200f, paint)
     }
 
     private fun paintOval(canvas: Canvas) {
