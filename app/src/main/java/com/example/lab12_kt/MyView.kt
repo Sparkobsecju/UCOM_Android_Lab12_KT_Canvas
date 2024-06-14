@@ -18,11 +18,15 @@ class MyView(context: Context, attributeSet: AttributeSet?, defaultStyle: Int) :
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         paintBackground(canvas)
-        //paintCircle(canvas)
-        //paintOval(canvas)
-        //paintLine(canvas)
-        //paintPath(canvas)
-//        paintPath2(canvas)
+        //canvas.translate(50f, 500f)
+        //canvas.rotate(45f)
+        canvas.rotate(90f, 600f, 600f)
+        //canvas.scale(2.0f, 3.0f)
+        paintCircle(canvas)
+        paintOval(canvas)
+        paintLine(canvas)
+        paintPath(canvas)
+        paintPath2(canvas)
         paintText(canvas)
     }
 
