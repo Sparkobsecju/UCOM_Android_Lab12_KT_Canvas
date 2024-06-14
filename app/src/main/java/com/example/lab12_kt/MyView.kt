@@ -22,7 +22,24 @@ class MyView(context: Context, attributeSet: AttributeSet?, defaultStyle: Int) :
         //paintOval(canvas)
         //paintLine(canvas)
         //paintPath(canvas)
-        paintPath2(canvas)
+//        paintPath2(canvas)
+        paintText(canvas)
+    }
+
+    companion object {
+        const val TEXT =
+            "Kotlin是一種在Java虛擬機上執行的靜態型別程式語言，它也可以被編譯成為JavaScript原始碼。它主要是由俄羅斯聖彼得堡的JetBrains開發團隊所發展出來的程式語言，其名稱來自於聖彼得堡附近的科特林島。[2]2012年1月，著名期刊《Dr. Dobb's Journal》中Kotlin被認定為該月的最佳語言。[3]雖然與Java語法並不相容，但在JVM環境中Kotlin被設計成可以和Java程式碼相互運作，並可以重複使用如Java集合框架等的現有Java參照的函式庫。Hathibelagal寫道，「如果你正在為Android開發尋找一種替代程式語言，那麼應該試下Kotlin。它很容易在Android專案中替代Java或者同Java一起使用。」"
+    }
+
+    private fun paintText(canvas: Canvas) {
+        val paint = Paint()
+        paint.style = Paint.Style.FILL
+        paint.color = Color.BLACK
+        paint.textSize = 40f
+        val path = Path()
+        path.moveTo(50f, 50f)
+        path.quadTo(1500f, -200f, 1000f, 2000f)
+        canvas.drawTextOnPath(TEXT, path, 0f, 0f, paint)
     }
 
     private fun paintPath2(canvas: Canvas) {
